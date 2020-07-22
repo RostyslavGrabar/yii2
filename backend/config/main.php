@@ -37,14 +37,20 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
+        
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '/' => 'tovar/index', // бекенд(сторвінка по замовчуванню)
+                '<controller>/<id:\d+>/<action>' => '<controller>/<action>',
             ],
         ],
-        */
+        
     ],
     'params' => $params,
 ];
+
+// Url::to(['tovar/' . $id . '/item']);
+
+// public function actionItem($id)
